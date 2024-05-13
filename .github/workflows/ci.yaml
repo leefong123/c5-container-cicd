@@ -67,26 +67,29 @@ jobs:
   deploy-image-dev:
     needs: [build-and-scan-image]
     name: "Deployed image to dev"
-    uses: luqmannnn/ci-cd-container/.github/workflows/cd.yml@main
+    uses: leefong123/c5-container-cicd/blob/main/.github/workflows/cd.yaml@main
     with:
         target_env: "dev"
+        action: "deploy"
     secrets: inherit
     if: ${{ github.ref_name == 'main' || github.ref_name == 'develop' || startsWith(github.ref_name, 'feature/') }}
 
   deploy-image-uat:
     needs: [build-and-scan-image]
     name: "Deployed image to uat"
-    uses: luqmannnn/ci-cd-container/.github/workflows/cd.yml@main
+    uses: leefong123/c5-container-cicd/blob/main/.github/workflows/cd.yaml@main
     with:
         target_env: "uat"
+        action: "deploy"
     secrets: inherit
     if: ${{ startsWith(github.ref_name, 'release/') }}
 
   deploy-image-prod:
     needs: [build-and-scan-image, deploy-image-uat]
     name: "Deployed image to prod"
-    uses: luqmannnn/ci-cd-container/.github/workflows/cd.yml@main
+    uses: leefong123/c5-container-cicd/blob/main/.github/workflows/cd.yaml@main
     with:
         target_env: "prod"
+        action: "deploy"
     secrets: inherit
     if: ${{ startsWith(github.ref_name, 'release/') }}
