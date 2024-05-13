@@ -12,11 +12,11 @@ resource "aws_ecs_task_definition" "own_task_definition" {
 
   # For custom ECR image
   # container_definitions = templatefile("./files/task-definition.json", {
-  #   image_url        = "255945442255.dkr.ecr.us-east-1.amazonaws.com/luqman-test-ecr-repo:latest"
-  #   container_name   = "luqman-test-ecs"
-  #   port_name        = "luqman-test-ecs-8080-tcp"
+  #   image_url        = "255945442255.dkr.ecr.us-east-1.amazonaws.com/lfchin-test-ecr-repo:latest"
+  #   container_name   = "lfchin-test-ecs"
+  #   port_name        = "lfchin-test-ecs-8080-tcp"
   #   log_group_region = "us-east-1"
-  #   log_group_name   = "/ecs/luqmantesttaskdef"
+  #   log_group_name   = "/ecs/lfchintesttaskdef"
   #   log_group_prefix = "ecs"
   # })
 

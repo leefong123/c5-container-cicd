@@ -19,31 +19,31 @@ variable "sg_id" {
 variable "ecs_cluster_name" {
     description = "ECS cluster name"
     type        = string
-    default     = "luqman-ecs-test-cluster" # Change accordingly
+    default     = "lfchin-ecs-test-cluster" # Change accordingly
 }
 
 variable "ecs_service_name" {
     description = "ECS service name"
     type        = string
-    default     = "luqman-ecs-service" # Change accordingly
+    default     = "lfchin-ecs-service" # Change accordingly
 }
 
 variable "ecs_task_defn_family" {
     description = "ECS task definition family name"
     type        = string
-    default     = "luqmanecstaskdef"
+    default     = "lfchinecstaskdef"
 }
 
 variable "ecs_container_name" {
     description = "ECS container name"
     type        = string
-    default     = "luqman-container"
+    default     = "lfchin-container"
 }
 
 variable "ecs_port_name" {
     description = "ECS port name"
     type        = string
-    default     = "luqman-3000-tcp"
+    default     = "lfchin-3000-tcp"
 }
 
 variable "ecs_host_port" {
@@ -67,5 +67,5 @@ variable "ecr_url" {
 variable "ecr_image_name" {
     description = "ECR image name"
     type        = string
-    default     = "luqman-node-app"
+    default     = "lfchin-node-app"
 }
